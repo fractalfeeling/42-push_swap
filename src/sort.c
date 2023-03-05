@@ -44,7 +44,7 @@ static void	final_sort(t_stack **stack_a)
 	int	lowest_pos;
 	int	stack_size;
 
-	stack_size = stack_get_size(*stack_a);
+	stack_size =stack_get_size(*stack_a);
 	lowest_pos = get_lowest_index_position(stack_a);
 	if (lowest_pos > stack_size / 2)
 	{

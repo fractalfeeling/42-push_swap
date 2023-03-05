@@ -44,9 +44,9 @@ t_stack	*stack_fill(int argc, char **argv)
 		if (nb > INT_MAX || nb < INT_MIN)
 			error_exit(&stack_a, NULL);
 		if (i == 1)
-			stack_a = stack_new_element(nb);
+			stack_a = stack_new_element((int)nb);
 		else
-			stack_add_bottom(&stack_a, stack_new_element(nb));
+			stack_add_bottom(&stack_a, stack_new_element((int)nb));
 		i++;
 	}
 	return (stack_a);

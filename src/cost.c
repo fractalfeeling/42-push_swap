@@ -59,6 +59,7 @@ void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 			cost_a = ptr->cost_a;
 			cost_b = ptr->cost_b;
 		}
+		ptr = ptr->next;
 	}
 	do_move(stack_a, stack_b, cost_a, cost_b);
 }

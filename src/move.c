@@ -26,9 +26,12 @@ static void	do_rev_rotate_both(t_stack **stack_a, t_stack **stack_b,
 static void	do_rotate_both(t_stack **stack_a, t_stack **stack_b,
 	int *cost_a, int *cost_b)
 {
-	rotate_r(stack_a, stack_b);
-	(*cost_a)--;
-	(*cost_b)--;
+	while (*cost_a > 0 && *cost_b > 0)
+	{
+		rotate_r(stack_a, stack_b);
+		(*cost_a)--;
+		(*cost_b)--;
+	}
 }
 
 static void	do_rotate_a(t_stack **stack_a, int *cost_a)
