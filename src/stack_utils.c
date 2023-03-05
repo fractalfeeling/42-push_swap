@@ -37,7 +37,7 @@ void	stack_add_bottom(t_stack **stack, t_stack *new)
 		*stack = new;
 		return ;
 	}
-	tail = get_stack_bottom(*stack);
+	tail = stack_get_bottom(*stack);
 	tail->next = new;
 }
 

@@ -58,7 +58,7 @@ void	assign_index(t_stack *stack_a, int stack_size)
 	t_stack	*highest;
 	int		value;
 
-	while (stack_size)
+	while (--stack_size > 0)
 	{
 		ptr = stack_a;
 		value = INT_MIN;
@@ -71,11 +71,12 @@ void	assign_index(t_stack *stack_a, int stack_size)
 			{
 				value = ptr->value;
 				highest = ptr;
+				ptr = stack_a;
 			}
-			ptr = ptr->next;
+			else
+				ptr = ptr->next;
 		}
 		if (highest != NULL)
 			highest->index = stack_size;
-		stack_size--;
 	}
 }

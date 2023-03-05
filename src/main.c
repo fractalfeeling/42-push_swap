@@ -42,14 +42,11 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	if (!check_input(argv))
-	{
-		ft_putstr("Error\n");
-		exit (1);
-	}
+		error_exit(NULL, NULL);
 	stack_a = stack_fill(argc, argv);
 	stack_b = NULL;
 	stack_size = stack_get_size(stack_a);
-	assign_index(stack_a, stack_size);
+	assign_index(stack_a, stack_size + 1);
 	push_swap(&stack_a, &stack_b, stack_size);
 	free_stack(&stack_a);
 	free_stack(&stack_b);

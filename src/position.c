@@ -66,7 +66,7 @@ static int	get_target(t_stack **stack_a, int b_index,
 	}
 	if (target_index != INT_MAX)
 		return (target_pos);
-	ptr_a = stack_a;
+	ptr_a = *stack_a;
 	while (ptr_a)
 	{
 		if (ptr_a->index < target_index)
@@ -79,7 +79,7 @@ static int	get_target(t_stack **stack_a, int b_index,
 	return (target_pos);
 }
 
-void	get_target_position(t_stack **stack_a, t_stack **stack_b)
+void	set_target_position(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*ptr_b;
 	int		target_pos;

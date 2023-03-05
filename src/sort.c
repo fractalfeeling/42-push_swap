@@ -70,7 +70,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	sort_three(stack_a);
 	while (*stack_b)
 	{
-		get_target_position(stack_a, stack_b);
+		set_target_position(stack_a, stack_b);
 		get_cost(stack_a, stack_b);
 		do_cheapest_move(stack_a, stack_b);
 	}

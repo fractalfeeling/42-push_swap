@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct s_stack
 {
@@ -32,6 +33,7 @@ typedef struct s_stack
 void		ft_putstr(char *str);
 long int	ft_atoi(const char *str);
 void		free_stack(t_stack **stack);
+void		error_exit(t_stack **stack_a, t_stack **stack_b);
 
 int			check_input(char **argv);
 
