@@ -19,7 +19,7 @@ static void	rotate(t_stack **stack)
 
 	tmp = *stack;
 	*stack = (*stack)->next;
-	tail = get_stack_bottom(*stack);
+	tail = stack_get_bottom(*stack);
 	tmp->next = NULL;
 	tail->next = tmp;
 }

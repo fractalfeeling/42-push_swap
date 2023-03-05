@@ -12,14 +12,14 @@
 
 #include "push_swap.h"
 
-t_stack *stack_get_bottom(t_stack *stack)
+t_stack	*stack_get_bottom(t_stack *stack)
 {
 	while (stack && stack->next != NULL)
 		stack = stack->next;
 	return (stack);
 }
 
-t_stack *stack_get_before_bottom(t_stack *stack)
+t_stack	*stack_get_before_bottom(t_stack *stack)
 {
 	while (stack && stack->next && stack->next->next != NULL)
 		stack = stack->next;
@@ -28,10 +28,10 @@ t_stack *stack_get_before_bottom(t_stack *stack)
 
 void	stack_add_bottom(t_stack **stack, t_stack *new)
 {
-	t_stack *tail;
+	t_stack	*tail;
 
 	if (!new)
-		return;
+		return ;
 	if (!*stack)
 	{
 		*stack = new;
@@ -44,7 +44,7 @@ void	stack_add_bottom(t_stack **stack, t_stack *new)
 int	stack_get_size(t_stack *stack)
 {
 	int	size;
-	
+
 	size = 0;
 	if (!stack)
 		return (0);

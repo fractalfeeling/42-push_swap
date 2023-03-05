@@ -62,13 +62,3 @@ void	free_stack(t_stack **stack)
 	}
 	*stack = NULL;
 }
-
-void	error_exit(t_stack **stack_a, t_stack **stack_b)
-{
-	if (stack_a == NULL || *stack_a != NULL)
-		free_stack(stack_a);
-	if (stack_b == NULL || *stack_b != NULL)
-		free_stack(stack_b);
-	ft_putstr("Error\n");
-	exit (1);
-}

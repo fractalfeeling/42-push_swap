@@ -16,10 +16,10 @@ static void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*tail;
-	t_stack *before_tail;
+	t_stack	*before_tail;
 
-	tail = get_stack_bottom(*stack);
-	before_tail = get_stack_before_bottom(*stack);
+	tail = stack_get_bottom(*stack);
+	before_tail = stack_get_before_bottom(*stack);
 	tmp = *stack;
 	*stack = tail;
 	(*stack)->next = tmp;
@@ -34,7 +34,7 @@ void	reverse_rotate_a(t_stack **stack_a)
 
 void	reverse_rotate_b(t_stack **stack_b)
 {
-	reverse_rotate(stack a);
+	reverse_rotate(stack_b);
 	ft_putstr("rrb\n");
 }
 

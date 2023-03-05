@@ -21,7 +21,7 @@ static void	push(t_stack **src, t_stack **dst)
 	tmp = (*src)->next;
 	(*src)->next = *dst;
 	*dst = *src;
-	*src = *tmp;
+	*src = tmp;
 }
 
 void	push_a(t_stack **stack_a, t_stack **stack_b)

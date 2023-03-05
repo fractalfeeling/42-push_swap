@@ -18,7 +18,7 @@ int	is_sorted(t_stack *stack)
 	{
 		if (stack->value > stack->next->value)
 			return (0);
-		stack = stack->next;	
+		stack = stack->next;
 	}
 	return (1);
 }
@@ -27,9 +27,9 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !is_sorted(*stack_a))
 		swap_a(stack_a);
-	else if(stack_size == 3)
+	else if (stack_size == 3)
 		sort_three(stack_a);
-	else if(stack_size > 3  && !is_sorted(*stack_a))
+	else if (stack_size > 3 && !is_sorted(*stack_a))
 		sort(stack_a, stack_b);
 }
 
@@ -42,5 +42,16 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	if (!check_input(argv))
-		error_exit(NULL, NULL);
+	{
+		ft_putstr("Error\n");
+		exit (1);
+	}
+	stack_a = stack_fill(argc, argv);
+	stack_b = NULL;
+	stack_size = stack_get_size(stack_a);
+	assign_index(stack_a, stack_size);
+	push_swap(&stack_a, &stack_b, stack_size);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
+	return (0);
 }
