@@ -46,7 +46,7 @@ int	main(int argc, char **argv)
 	stack_a = stack_fill(argc, argv);
 	stack_b = NULL;
 	stack_size = stack_get_size(stack_a);
-	assign_index(stack_a, stack_size + 1);
+	assign_index(stack_a, stack_size);
 	push_swap(&stack_a, &stack_b, stack_size);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
